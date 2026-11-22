@@ -2,80 +2,82 @@
 
 **Local legal answers, not generic ones.**
 
-QueryBase is a multilingual legal-information tool for **California housing and labour law**. It is a revival of QueryBase, a consumer AI Q&A platform that had shut down, rebuilt overnight at **Revive Night**, an inter-college hackathon at **Techkshetra '26**.
+QueryBase is a multilingual legal-information tool for **California housing and labour law**. It is a revival of QueryBase, a consumer Q&A platform that had shut down, rebuilt overnight at **Revive Night**, an inter-college hackathon at Techkshetra '26.
 
 > **Disclaimer:** QueryBase provides general legal information, not legal advice. It is not a substitute for a qualified attorney. This is an overnight prototype and may contain errors and limitations.
 
----
-
 ## About the Project
 
-**Revive Night** challenged teams to take a failed startup and bring it back in a single overnight hackathon.
+Revive Night challenged teams to take a failed startup and bring it back in a single overnight hackathon.
 
-**Why QueryBase?**
-Generic LLMs give broad, generalized answers, but people often need help with questions specific to their own locality. QueryBase was meant to solve this, but the original platform was too broad to stand out.
+**Why QueryBase?** Generic chatbots give broad answers, but people often need help with questions specific to their own locality. QueryBase set out to solve this, but the original platform was too broad to stand out.
 
-**Our revival strategy:**
-We narrowed the product to **one legal topic in one region**: California housing and labour law. Focus gives answers that are more accurate, more useful and easier to trust.
-
----
+**Our revival strategy:** We narrowed the product to one legal area in one region: California housing and labour law. Focus gives answers that are more accurate, more useful and easier to trust.
 
 ## Features
 
-- **Multilingual support:** legal information in multiple languages
-- **Issue diagnostics:** describe your situation and identify the legal issue involved
-- **Statutory deadline calculators:** work out the time limits that apply to your case
-- **Demand letter generator:** generate a ready-to-edit demand letter
+- **Two legal domains:** switch between California Housing & Tenant Law and Labor & Employment Law
+- **Question analyzer:** type a situation in plain language and get the relevant statute, a short explanation and suggested next steps
+- **Legal rights diagnostic:** answer a few questions to check whether you are covered
+  - Housing: AB 1482 coverage check (property age, type, tenancy length)
+  - Labor: employment classification and wage/break/final-pay issues
+- **Statutory deadline and penalty calculator:**
+  - Unlawful detainer answer deadline (10 court days)
+  - 3-day notice expiry
+  - Final pay delay penalty (Lab. Code § 203)
+  - Wage claim filing deadline
+  - Export any deadline to your calendar as an `.ics` file
+- **Demand letter generator:** pre-formatted draft letters citing the relevant code section, ready to copy and edit
+- **Language switcher:** English, Spanish, Chinese and Tagalog for key interface text
 
----
+## Topics Covered
+
+| Housing & Tenant Law | Labor & Employment Law |
+|---|---|
+| Rent increase caps (Civ. Code § 1947.12, AB 1482) | Overtime pay (Lab. Code § 510) |
+| Security deposits (Civ. Code § 1950.5) | Meal and rest breaks (Lab. Code § 226.7) |
+| Habitability and repairs (Civ. Code § 1941.1) | Final paycheck and waiting time penalties (Lab. Code §§ 201-203) |
+| Landlord entry (Civ. Code § 1954) | Expense reimbursement (Lab. Code § 2802) |
 
 ## Live Demo
 
 Try the build: https://lnkd.in/gtc9zhCK
 
----
+## How It Works
+
+1. Choose a domain (Housing or Labor).
+2. Ask a question, or use the preset buttons.
+3. The app matches your question to the relevant California statute and shows a plain-language summary with action steps.
+4. Use the diagnostic, the deadline calculator or the letter generator for next steps.
+
+Everything runs in your browser. Nothing you type is sent to a server.
 
 ## Tech Stack
 
-> Fill in your actual stack.
-
-- **Frontend:** _e.g., React, Vite_
-- **Backend / AI:** _e.g., LLM API, Node.js / Python_
-- **Deployment:** _e.g., Vercel_
-
----
+- **Frontend:** HTML, Tailwind CSS (via CDN), vanilla JavaScript
+- **UI assets:** Lucide icons, Google Fonts (Plus Jakarta Sans, JetBrains Mono)
+- **Logic:** Rule-based. Answers are keyword-matched summaries of the California Civil Code, Labor Code and Code of Civil Procedure (no external AI API)
+- **Deployment:** Static site, no backend
 
 ## Getting Started
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/gourimulloth/querybase.git
 
 # Go to the project folder
-cd <repo-name>
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
+cd querybase
 ```
 
-Open the local URL shown in your terminal.
-
-> Adjust these commands to match your project.
-
----
+Open `index.html` in your browser, or use the VS Code **Live Server** extension. An internet connection is needed to load the CDN assets (Tailwind, Lucide, fonts).
 
 ## Team Decode
 
 Built by:
 
-- [Chessa Susan Koshy](https://www.linkedin.com/in/chessa-susan-koshy-8a7246383/)
-- [Gouri M](https://www.linkedin.com/in/gouri-mulloth/)
-- [Add teammate name and LinkedIn link]
-
----
+- Chessa Susan Koshy
+- Gouri M
+- Hannah Mariyam
 
 ## What We Learned
 
@@ -86,21 +88,23 @@ Built by:
 - Presenting a technical solution clearly to judges
 - Working collaboratively under time constraints
 
----
-
 ## Event
 
 - **Event:** Revive Night, part of Techkshetra '26
 - **Venue:** Rajagiri School of Engineering & Technology (Autonomous), Kochi
 - **Organized by:** RSET IEDC
 
----
-
 ## Limitations
 
-This project was built overnight as a learning experience. It may have errors, incomplete coverage and unverified legal content. Do not rely on it for real legal decisions.
+This project was built overnight as a learning experience.
 
----
+- Answers are keyword-matched statute summaries, not generated by an LLM. Questions outside the covered topics get a generic reply.
+- Only key interface text is translated. Legal content is in English.
+- The deadline calculators skip weekends but do not account for court holidays.
+- Statute summaries have not been reviewed by an attorney and may be incomplete or out of date. Check them against the current California codes.
+- Do not rely on this tool for real legal decisions.
+
+## Acknowledgements
 
 Thank you to the organizers, mentors and judges for making the experience meaningful.
 
