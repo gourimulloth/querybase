@@ -448,7 +448,20 @@
                     <li>Document defects thoroughly with dated photographs or videos.</li>
                     <li>Contact municipal code enforcement if health hazards persist.</li>`;
 
-            } else if (lower.includes('rent') || lower.includes('increase') || lower.includes('1947.12')) {
+                   } else if (lower.includes('deposit') || lower.includes('1950.5')) {
+            badge.textContent = "Cal. Civ. Code § 1950.5";
+            body.textContent = "After move-out, a landlord must return the security deposit, with an itemized statement of any deductions, within 21 days.";
+            list.innerHTML = `
+                <li>Send your forwarding address in writing.</li>
+                <li>Request an itemized statement of deductions.</li>
+                <li>Send a written demand citing Cal. Civ. Code § 1950.5 if the 21 days pass.</li>`;
+
+        } else if (lower.includes('enter') || lower.includes('1954')) {
+            badge.textContent = "Cal. Civ. Code § 1954";
+            body.textContent = "Except in emergencies, a landlord must give reasonable written notice (24 hours is presumed reasonable) before entering, and only for permitted purposes during normal business hours.";
+            list.innerHTML = `
+                <li>Keep a dated record of each entry and any notice you received.</li>
+                <li>Send a written objection if notice was not given.</li>`; } else if (lower.includes('rent') || lower.includes('increase') || lower.includes('1947.12')) {
                 badge.textContent = "Cal. Civ. Code § 1947.12";
                 body.textContent = "Under AB 1482 (Cal. Civ. Code § 1947.12), annual rent increases for covered properties constructed more than 15 years ago are strictly capped at 5% plus regional CPI (up to a 10% maximum).";
                 list.innerHTML = `
